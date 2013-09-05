@@ -35,9 +35,15 @@
             top: 0,
             'background-position-y': '-110px'
           }, 1000, 'easeOutBounce', function() {
-            $('#title').fadeTo(2000, 1);
-            $('#title #byline').delay(2000).fadeTo(1000, 1);
-            $('.details').delay(2500).fadeTo(100, 1);
+            $('#title')
+              .delay(500)
+              .fadeTo(2000, 1);
+            $('#title #byline')
+              .delay(1500)
+              .fadeTo(3000, 1, 'easeInCubic');
+            $('.details')
+              .delay(4000)
+              .fadeTo(1000, 1);
           });
       }
 
