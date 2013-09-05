@@ -1,11 +1,25 @@
 #title {
     text-align: center;
-    font-size: 100px;
-    font-style: italic;
-    font-family: georgia;
+    margin-bottom: 0;
+}
+#title #name {
+    display: block;
+    font-size: 30px;
+    /*font-style: italic;*/
+    font-family: AleoLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #aaa;
+    letter-spacing: 47px;
+    position: relative;
+    left: 22px;
+    top: 10px;
+    text-transform: lowercase;
+}
+#title #name #highlight {
+    font-weight: bold;
+    font-family: AleoBold, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 #title #byline {
+    display: block;
     clear: left;
     font-size: 100px;
     text-transform: uppercase;
@@ -15,12 +29,16 @@
     font-style: normal;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(51, 51, 51);
+    position: relative;
+    left: -15px;
 }
 
 .details {
     text-align: center;
     font-weight: 300;
     margin-bottom: 0px;
+    opacity: 0.8;
+    margin-top: 30px;
 }
 
 .bullet {
@@ -43,6 +61,15 @@
     margin-top: 40px;
     background-image: url('../img/ash.jpg');
     background-position: 0 -110px;
+}
+
+@font-face {
+    font-family: AleoLight;
+    src: url('../fonts/Aleo-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: AleoBold;
+    src: url('../fonts/Aleo-Bold.otf') format('opentype');
 }
 
 /*html.js #avatar,
