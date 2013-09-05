@@ -14,9 +14,39 @@
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script type="text/javascript">
-      $(function() {
-      });
+    $(function() {
+      $('#avatar')
+        .css({
+          top: '-20px',
+          'background-position-y': '-200px'
+        })
+        .animate({
+          opacity: 1,
+          top: 0,
+          'background-position-y': '-110px'
+        }, 1000, 'easeOutBounce', function() {
+          $('#title').fadeTo(2000, 1);
+          $('#title #byline').delay(2000).fadeTo(1000, 1);
+          $('.details').delay(2500).fadeTo(100, 1);
+        });
+
+      function skip() {
+        $('#avatar, #title, #title #byline, .details')
+          .stop()
+          .css('opacity', 1);
+        $('#avatar')
+          .css({
+          top: 0,
+          'background-position-y': '-110px'
+        })
+      }
+
+      $(window)
+        .click(skip)
+        .keydown(skip);
+    });
   </script>
 </body>
 </html>

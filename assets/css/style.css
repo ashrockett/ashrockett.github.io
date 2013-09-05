@@ -72,9 +72,9 @@
     src: url('../fonts/Aleo-Bold.otf') format('opentype');
 }
 
-/*html.js #avatar,
+html.js #avatar,
 html.js #title,
 html.js #title #byline,
 html.js .details {
     opacity: 0;
-}*/
+}
