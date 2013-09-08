@@ -49,7 +49,6 @@ footer {
 }
 
 .block {
-	min-width: 250px;
 	min-height: 300px;
 	background-color: #eee;
 	float: left;
@@ -57,20 +56,42 @@ footer {
 	-webkit-transition: all .05s ease-in-out; 
 	margin-left: 20px;
 	margin-top: 20px;
+	position: relative;
+	max-height: 300px;
+	overflow: hidden;
 }
-.block img {
-	display: block;
-	height: 300px;
+.block img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
 }
+.block img.tall {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+}​
 a.block:hover {
 	background-color: #ddd;
 	/*-webkit-transform: scale(1.05);*/
+}
+.block .title {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 10px 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	text-transform: uppercase;
+	font-weight: 300;
 }
 
 #title {
 	color: black;
 	text-decoration: none;
-	width: 200px;
+	width: 250px;
 	height: 300px;
 }
 #title #name {
