@@ -51,6 +51,7 @@ PhotoSet.prototype = {
                 photoSet.ownerId = photoset.owner;
                 photoSet.ownerName = photoset.ownername;
                 photoSet.total = photoset.total;
+                console.log(photoSet.json);
 
                 photoSet.photos = [];
                 for (var i = 0; i < photoset.photo.length; i++) {
@@ -84,7 +85,7 @@ PhotoSet.prototype = {
                 if ($this.is('.closed')) {
                     for (var i = 0; i < photoSet.photos.length; i++) {
                         var photo = photoSet.photos[i];
-                        $('.wrapper').append('<a class="block photo unanimated"><img src="' + photo.urls.medium500 + '"><span class="title>' + photo.title + '</title></a>');
+                        $('.wrapper').append('<a class="block photo unanimated"><img src="' + photo.urls.medium500 + '"><span class="title">' + photo.title + '</span></a>');
                     }
                     $('.block.photo img').each(function() {
                         var $this = $(this);
