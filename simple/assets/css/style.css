@@ -1,0 +1,184 @@
+.table {
+    display: table;
+    margin: 0 auto;
+}
+
+body.beautiful{
+    cursor: none;
+}
+body.beautiful a.arrow {
+    cursor: none;
+    opacity: 0;
+}
+
+#header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: white;
+    opacity: 0.2;
+    overflow: hidden;
+}
+
+#header #avatar {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    border: 5px solid white;
+    -webkit-border-radius: 999px;
+       -moz-border-radius: 999px;
+        -ms-border-radius: 999px;
+         -o-border-radius: 999px;
+            border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../img/ash.jpg');
+    background-position: 208px -203px;
+    display: block;
+    float: left;
+
+    display: none;
+}
+#header h1 {
+    display: block;
+    float: left;
+    width: 200px;
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+
+    display: none;
+}
+#header #nav {
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    top: 5px;
+
+    width: 100%;
+    margin: 0 auto;
+}
+#header #nav li {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+}
+#header #nav li a {
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-weight: 300;
+    color: #333;
+
+    display: block;
+
+    padding: 5px 5px;
+}
+
+#photos {
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+}
+#photos.contain {
+    top: 50px;
+}
+#photos #canvas {
+    width: 999999999999px;
+    height: 100%;
+    position: relative;
+}
+#photos #canvas .photo {
+    height: 100%;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+#photos #canvas .photo.loaded .spinner {
+    display: none;
+}
+#photos #canvas .photo.active {
+    
+}
+#photos #canvas .photo img {
+    position: relative;
+    max-width: none;
+    max-height: none;
+    opacity: 0;
+    display: block;
+}
+#photos #canvas .photo.loaded img {
+    opacity: 1;
+}
+#photos.cover #canvas .photo img.height {
+    height: 110%;
+}
+#photos.cover #canvas .photo img.width {
+    width: 110%;
+}
+
+#photos.contain #canvas .photo img {
+    border-radius: 3px;
+}
+#photos.contain #canvas .photo img.height {
+    width: 95%;
+}
+#photos.contain #canvas .photo img.width {
+    height: 95%;
+}
+
+
+#photos .arrow {
+    display: block;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: Tahoma;
+    opacity: 0;
+    -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+    vertical-align: middle;
+    text-shadow: 0 0 50px rgba(0,0,0,0.7);
+
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    line-height: 200px;
+    cursor: default;
+}
+#photos .arrow:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+#photos #prev.arrow {
+    position: absolute;
+    left: 0;
+    padding-right: 10%;
+}
+#photos #next.arrow {
+    position: absolute;
+    right: 0;
+    padding-left: 10%;
+}
+
+#photos.no-prev #prev.arrow,
+#photos.no-next #next.arrow {
+    opacity: 0;
+    cursor: default;
+}
