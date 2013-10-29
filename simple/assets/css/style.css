@@ -93,7 +93,7 @@ body.beautiful a.arrow {
     overflow: hidden;
 }
 #photos.contain {
-    /*top: 50px;*/
+    /*top: 40px;*/
 }
 #photos #canvas {
     width: 999999999999px;
@@ -132,13 +132,13 @@ body.beautiful a.arrow {
 }
 
 #photos.contain #canvas .photo img {
-    /*border-radius: 3px;*/
+    border-radius: 3px;
 }
 #photos.contain #canvas .photo img.height {
-    width: 100%;
+    width: 80%;
 }
 #photos.contain #canvas .photo img.width {
-    height: 100%;
+    height: 80%;
 }
 
 
@@ -169,12 +169,12 @@ body.beautiful a.arrow {
 #photos #prev.arrow {
     position: absolute;
     left: 0;
-    padding-right: 10%;
+    padding-right: 40%;
 }
 #photos #next.arrow {
     position: absolute;
     right: 0;
-    padding-left: 10%;
+    padding-left: 40%;
 }
 
 #photos.no-prev #prev.arrow,
