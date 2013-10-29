@@ -80,18 +80,18 @@
 <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
   <header id="header">
-    <div id="avatar"></div>
-    <h1><span id="name">Ash Rockett</span><span id="byline">Photography</span></h1>
     <div class="table">
       <ul id="nav">
+        <li id="name"><a href="/simple/">Ash Rockett</a></li>
         <li {% if page.title == 'bw' %}class="active"{% endif %}><a href="/simple/">B&amp;W</a></li>
         <li {% if page.title == 'portraiture' %}class="active"{% endif %}><a href="/simple/portraiture/">Portraiture</a></li>
-        <li {% if page.title == 'observation' %}class="active"{% endif %}><a href="/simple/observation/">Observation</a></li>
-        <li {% if page.title == 'fauna' %}class="active"{% endif %}><a href="/simple/fauna/">Fauna</a></li>
+        <li {% if page.title == 'life' %}class="active"{% endif %}><a href="/simple/life/">Life</a></li>
+        <li {% if page.title == 'animals' %}class="active"{% endif %}><a href="/simple/animals/">Animals</a></li>
         <li {% if page.title == 'new-zealand' %}class="active"{% endif %}><a href="/simple/new-zealand/">New Zealand</a></li>
         <li {% if page.title == 'film' %}class="active"{% endif %}><a href="/simple/film/">Film</a></li>
       </ul>
     </div>
+    <!-- <h1 id="title">Ash Rockett</h1> -->
   </header>
 
   <div id="photos" class="contain no-prev">
@@ -99,6 +99,8 @@
     <a id="prev" class="arrow" href="#previous">&lsaquo;</a>
     <a id="next" class="arrow" href="#next">&rsaquo;</a>
   </div>
+
+  <div id="copyright">&copy; Ash Rockett 2013/2014</div>
   
   <!-- <footer>
     

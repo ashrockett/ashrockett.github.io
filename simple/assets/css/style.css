@@ -1,3 +1,8 @@
+@font-face {
+    font-family: AleoLight;
+    src: url('../fonts/Aleo-Light.otf') format('opentype');
+}
+
 .table {
     display: table;
     margin: 0 auto;
@@ -20,41 +25,16 @@ body.beautiful #photos a.arrow {
     height: 40px;
     background-color: white;
     opacity: 0.2;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
-
-#header #avatar {
+#header h1#title {
+    display: block;
     position: absolute;
-    left: 0px;
-    top: -5px;
+    top: 9px;
+    left: 5%;
 
-    width: 50px;
-    height: 50px;
-    border-radius: 999px;
-    border: 5px solid white;
-    -webkit-border-radius: 999px;
-       -moz-border-radius: 999px;
-        -ms-border-radius: 999px;
-         -o-border-radius: 999px;
-            border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-    background-image: url('../img/ash.jpg');
-    background-position: 208px -203px;
-    display: block;
-    float: left;
-
-    display: none;
-}
-#header h1 {
-    display: block;
-    float: left;
-    width: 200px;
-    margin-left: 10px;
-    position: relative;
-    top: 5px;
-
-    display: none;
+    font-family: AleoLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    opacity: 0.3;
 }
 #header #nav {
     display: block;
@@ -69,6 +49,12 @@ body.beautiful #photos a.arrow {
     float: left;
     display: inline;
     margin-left: 10px;
+}
+#header #nav li#name a {
+    opacity: 0.5;
+    /*text-transform: capitalize;*/
+    border-right: 1px solid #666;
+    padding-right: 15px;
 }
 #header #nav li.active {
     background-color: rgba(0,0,0,0.05);
@@ -152,13 +138,13 @@ body.beautiful #photos a.arrow {
     font-weight: 100;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: #888;
     font-family: Tahoma;
     opacity: 0;
     -webkit-transition: all 0.2s;
             transition: all 0.2s;
     vertical-align: middle;
-    text-shadow: 0 0 50px rgba(0,0,0,0.7);
+    text-shadow: 0 0 50px rgba(255,255,255,0.7);
 
     top: 0;
     bottom: 0;
@@ -185,4 +171,17 @@ body.beautiful #photos a.arrow {
 #photos.no-next #next.arrow {
     /*opacity: 0;*/
     /*cursor: default;*/
+}
+
+#copyright {
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 0.2;
+    display: none;
 }

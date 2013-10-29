@@ -218,13 +218,19 @@ initPhotoset = null;
             $body.addClass('beautiful');
             beautiful = true;
             $header.animate({
-                top: -40,
+                top: -60,
             }, 600, 'easeOutQuad');
+            $header.find('#title').animate({
+                opacity: 0,
+            }, 200, 'easeOutQuad');
         });
         $window.on('debeautify', function() {
             beautiful = false;
             $header.stop().animate({
                 top: 0,
+            }, 200, 'easeInQuad');
+            $header.find('#title').stop().animate({
+                opacity: 1,
             }, 200, 'easeInQuad');
             $body.removeClass('beautiful');
         });
