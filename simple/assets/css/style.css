@@ -6,8 +6,8 @@
 body.beautiful{
     cursor: none;
 }
-body.beautiful a.arrow {
-    cursor: none;
+body.beautiful #photos a.arrow {
+    cursor: none !important;
     opacity: 0;
 }
 
@@ -179,6 +179,6 @@ body.beautiful a.arrow {
 
 #photos.no-prev #prev.arrow,
 #photos.no-next #next.arrow {
-    opacity: 0;
-    cursor: default;
+    /*opacity: 0;*/
+    /*cursor: default;*/
 }
