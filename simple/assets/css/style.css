@@ -51,7 +51,7 @@ body.beautiful #photos a.arrow {
     margin-left: 10px;
 }
 #header #nav li#name a {
-    opacity: 0.5;
+    /*opacity: 0.5;*/
     /*text-transform: capitalize;*/
     border-right: 1px solid #666;
     padding-right: 15px;
