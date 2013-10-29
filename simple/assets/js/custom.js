@@ -359,13 +359,7 @@ initPhotoset = null;
                     .addClass('active')
                     .siblings().removeClass('active');
 
-            // Load image
-            if ($newActiveImage.attr('src') === undefined) {
-                $newActiveImage.attr('src', $newActiveImage.data('src'));
-                animateShift();
-            } else {
-                animateShift();
-            }
+            animateShift();
 
             if (current == 0) {
                 $photos.addClass('no-prev');
@@ -393,11 +387,7 @@ initPhotoset = null;
                             $parentPhoto = $this.parent('.photo');
                         $parentPhoto.addClass('loaded');
                         $this.hide().fadeIn(500);
-                        // imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
-                        // $this.addClass(imgClass);
                         $this.data('aspect-ratio', this.width / $this.height());
-                        // $window.resize();
-                        // resizePhoto.call($photo[0]);
                         resizePhoto.call($parentPhoto[0]);
                     });
 
@@ -411,7 +401,7 @@ initPhotoset = null;
                         corners: 1, // Corner roundness (0..1)
                         rotate: 0, // The rotation offset
                         direction: 1, // 1: clockwise, -1: counterclockwise
-                        color: '#000', // #rgb or #rrggbb or array of colors
+                        color: '#aaa', // #rgb or #rrggbb or array of colors
                         speed: 0.9, // Rounds per second
                         trail: 78, // Afterglow percentage
                         shadow: false, // Whether to render a shadow
@@ -426,12 +416,11 @@ initPhotoset = null;
                         top: '50%',
                     });
 
-                    $img.data('src', photo.urls.large1024)
+                    $img.attr('src', photo.urls.large1024)
                     $('#photos #canvas').append($photo);
 
                     if (i == 0) {
                         $photo.addClass('active');
-                        $img.attr('src', photo.urls.large1024);
                     }
                 }
                 $photos
