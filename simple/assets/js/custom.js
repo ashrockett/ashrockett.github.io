@@ -35,7 +35,7 @@ PhotoSet = function(photosetId) {
     this.url = 'http://api.flickr.com/services/rest/?jsoncallback=?&' + $.param({
         format: 'json',
         method: 'flickr.photosets.getPhotos',
-        api_key: 'e3e4265e5a99e86902b8c5c80fcd1587',
+        api_key: 'fbb7446eb79b0edeb93fbed3ba0adab6',
         // user_id: '101306928@N04',
         photoset_id: this.photosetId,
         per_page: '25'
