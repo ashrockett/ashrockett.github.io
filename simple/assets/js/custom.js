@@ -230,11 +230,15 @@ PhotoSet.prototype = {
         // -----
 
         function setUpContainEvents() {
-
+            $window.mousemove(checkIdleMouse);
+            $window.mousemove(updateMousePos);
+            $window.mousemove(calcMenuSize);
         }
 
         function tearDownContainEvents() {
-
+            $window.unbind('mousemove', checkIdleMouse);
+            $window.unbind('mousemove', updateMousePos);
+            $window.unbind('mousemove', calcMenuSize);
         }
 
         function setUpCoverEvents() {
@@ -385,15 +389,16 @@ PhotoSet.prototype = {
                     $img = $('<img>');
                 $photo.append($img);
                 $img.load(function() {
-                    var $this = $(this);
-                    $this.parent('.photo').addClass('loaded');
+                    var $this = $(this),
+                        $parentPhoto = $this.parent('.photo');
+                    $parentPhoto.addClass('loaded');
                     $this.hide().fadeIn(500);
                     // imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
                     // $this.addClass(imgClass);
                     $this.data('aspect-ratio', this.width / $this.height());
                     // $window.resize();
                     // resizePhoto.call($photo[0]);
-                    resizePhoto.call($('.photo.active')[0]);
+                    resizePhoto.call($parentPhoto[0]);
                 });
 
                 $photo.css('width', $window.width());

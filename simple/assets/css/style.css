@@ -93,7 +93,7 @@ body.beautiful a.arrow {
     overflow: hidden;
 }
 #photos.contain {
-    top: 50px;
+    /*top: 50px;*/
 }
 #photos #canvas {
     width: 999999999999px;
@@ -132,13 +132,13 @@ body.beautiful a.arrow {
 }
 
 #photos.contain #canvas .photo img {
-    border-radius: 3px;
+    /*border-radius: 3px;*/
 }
 #photos.contain #canvas .photo img.height {
-    width: 95%;
+    width: 100%;
 }
 #photos.contain #canvas .photo img.width {
-    height: 95%;
+    height: 100%;
 }
 
 
