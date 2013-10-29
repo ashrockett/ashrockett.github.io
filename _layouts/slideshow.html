@@ -37,24 +37,24 @@
   -->
 
   <!-- Iconifier might be helpful for generating favicons and touch icons: http://iconifier.net -->
-  <link rel="shortcut icon" href="/simple/assets/img/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" />
   <!-- This is the traditional favicon.
      - size: 16x16 or 32x32
      - transparency is OK -->
      
-  <link rel="apple-touch-icon" href="/simple/assets/img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <!-- The is the icon for iOS's Web Clip and other things.
      - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for retina display (IMHO, just go ahead and use the biggest one)
      - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
      - Transparency is not recommended (iOS will put a black BG behind the icon) -->
   
   <!-- concatenate and minify for production -->
-  <link rel="stylesheet" href="/simple/assets/css/reset.css" />
-  <link rel="stylesheet" href="/simple/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   
   <!-- This is an un-minified, complete version of Modernizr. 
      Before you move to production, you should generate a custom build that only has the detects you need. -->
-  <script src="/simple/assets/js/modernizr-2.6.2.min.js"></script>
+  <script src="/assets/js/modernizr-2.6.2.min.js"></script>
   
   <!-- Application-specific meta tags -->
   <!-- Windows 8 -->
@@ -82,13 +82,13 @@
   <header id="header">
     <div class="table">
       <ul id="nav">
-        <li id="name"><a href="/simple/"><span style="opacity: 0.5">&copy;</span> Ash Rockett</a></li>
-        <li {% if page.title == 'bw' %}class="active"{% endif %}><a href="/simple/">B&amp;W</a></li>
-        <li {% if page.title == 'portraiture' %}class="active"{% endif %}><a href="/simple/portraiture/">Portraiture</a></li>
-        <li {% if page.title == 'life' %}class="active"{% endif %}><a href="/simple/life/">Life</a></li>
-        <li {% if page.title == 'animals' %}class="active"{% endif %}><a href="/simple/animals/">Animals</a></li>
-        <li {% if page.title == 'new-zealand' %}class="active"{% endif %}><a href="/simple/new-zealand/">New Zealand</a></li>
-        <li {% if page.title == 'film' %}class="active"{% endif %}><a href="/simple/film/">Film</a></li>
+        <li id="name"><a href="/"><span style="opacity: 0.5">&copy;</span> Ash Rockett</a></li>
+        <li {% if page.title == 'bw' %}class="active"{% endif %}><a href="/">B&amp;W</a></li>
+        <li {% if page.title == 'portraiture' %}class="active"{% endif %}><a href="/portraiture/">Portraiture</a></li>
+        <li {% if page.title == 'life' %}class="active"{% endif %}><a href="/life/">Life</a></li>
+        <li {% if page.title == 'animals' %}class="active"{% endif %}><a href="/animals/">Animals</a></li>
+        <li {% if page.title == 'new-zealand' %}class="active"{% endif %}><a href="/new-zealand/">New Zealand</a></li>
+        <li {% if page.title == 'film' %}class="active"{% endif %}><a href="/film/">Film</a></li>
       </ul>
     </div>
     <!-- <h1 id="title">Ash Rockett</h1> -->
@@ -116,14 +116,14 @@
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='/simple/assets/js/jquery-1.10.2.min.js'>\x3C/script>")</script>
+<script>window.jQuery || document.write("<script src='/assets/js/jquery-1.10.2.min.js'>\x3C/script>")</script>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/spin.js/1.3.2/spin.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- this is where we put our custom functions -->
 <!-- don't forget to concatenate and minify if needed -->
-<script src="/simple/assets/js/custom.js"></script>
+<script src="/assets/js/custom.js"></script>
 
 <script type="text/javascript">
     $(function() {

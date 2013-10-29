@@ -1,80 +1,187 @@
-#title {
-    text-align: center;
-    margin-bottom: 0;
-}
-#title #name {
-    display: block;
-    font-size: 30px;
-    /*font-style: italic;*/
-    font-family: AleoLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #aaa;
-    letter-spacing: 47px;
-    position: relative;
-    left: 22px;
-    top: 10px;
-    text-transform: lowercase;
-}
-#title #name #highlight {
-    font-weight: bold;
-    font-family: AleoBold, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-#title #byline {
-    display: block;
-    clear: left;
-    font-size: 100px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px #000;
-    letter-spacing: -20px;
-    font-style: normal;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: rgb(51, 51, 51);
-    position: relative;
-    left: -15px;
-}
-
-.details {
-    text-align: center;
-    font-weight: 300;
-    margin-bottom: 0px;
-    opacity: 0.8;
-    margin-top: 30px;
-}
-
-.bullet {
-    opacity: 0.5;
-    padding: 0 10px;
-}
-
-#avatar {
-    margin: 0 auto;
-    width: 330px;
-    height: 330px;
-    border-radius: 999px;
-    -webkit-border-radius: 999px;
-       -moz-border-radius: 999px;
-        -ms-border-radius: 999px;
-         -o-border-radius: 999px;
-            border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 40px;
-    background-image: url('../img/ash.jpg');
-    background-position: 0 -110px;
-}
-
 @font-face {
     font-family: AleoLight;
     src: url('../fonts/Aleo-Light.otf') format('opentype');
 }
-@font-face {
-    font-family: AleoBold;
-    src: url('../fonts/Aleo-Bold.otf') format('opentype');
+
+.table {
+    display: table;
+    margin: 0 auto;
 }
 
-html.js #avatar,
-html.js #title,
-html.js #title #byline,
-html.js .details {
+body.beautiful{
+    cursor: none;
+}
+body.beautiful #photos a.arrow {
+    cursor: none !important;
     opacity: 0;
+}
+
+#header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: white;
+    opacity: 0.2;
+    /*overflow: hidden;*/
+}
+#header h1#title {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 5%;
+
+    font-family: AleoLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    opacity: 0.3;
+}
+#header #nav {
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    top: 5px;
+
+    width: 100%;
+    margin: 0 auto;
+}
+#header #nav li {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+}
+#header #nav li#name a {
+    /*opacity: 0.5;*/
+    /*text-transform: capitalize;*/
+    border-right: 1px solid #666;
+    padding-right: 15px;
+}
+#header #nav li.active {
+    background-color: rgba(0,0,0,0.05);
+    position: relative;
+}
+#header #nav li a {
+    width: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: -1px;
+    font-weight: 300;
+    color: #333;
+
+    display: block;
+
+    padding: 5px 5px;
+}
+
+#photos {
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+}
+#photos.contain {
+    /*top: 40px;*/
+}
+#photos #canvas {
+    width: 999999999999px;
+    height: 100%;
+    position: relative;
+}
+#photos #canvas .photo {
+    height: 100%;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+#photos #canvas .photo.loaded .spinner {
+    display: none;
+}
+#photos #canvas .photo.active {
+    
+}
+#photos #canvas .photo img {
+    position: relative;
+    max-width: none;
+    max-height: none;
+    opacity: 0;
+    display: block;
+}
+#photos #canvas .photo.loaded img {
+    opacity: 1;
+}
+#photos.cover #canvas .photo img.height {
+    height: 110%;
+}
+#photos.cover #canvas .photo img.width {
+    width: 110%;
+}
+
+#photos.contain #canvas .photo img {
+    border-radius: 3px;
+}
+#photos.contain #canvas .photo img.height {
+    width: 80%;
+}
+#photos.contain #canvas .photo img.width {
+    height: 80%;
+}
+
+
+#photos .arrow {
+    display: block;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    text-decoration: none;
+    color: #888;
+    font-family: Tahoma;
+    opacity: 0;
+    -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+    vertical-align: middle;
+    text-shadow: 0 0 50px rgba(255,255,255,0.7);
+
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    line-height: 200px;
+    cursor: default;
+}
+#photos .arrow:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+#photos #prev.arrow {
+    position: absolute;
+    left: 0;
+    padding-right: 40%;
+}
+#photos #next.arrow {
+    position: absolute;
+    right: 0;
+    padding-left: 40%;
+}
+
+#photos.no-prev #prev.arrow,
+#photos.no-next #next.arrow {
+    /*opacity: 0;*/
+    /*cursor: default;*/
+}
+
+#copyright {
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 0.2;
+    display: none;
 }
