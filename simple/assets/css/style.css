@@ -70,6 +70,10 @@ body.beautiful #photos a.arrow {
     display: inline;
     margin-left: 10px;
 }
+#header #nav li.active {
+    background-color: rgba(0,0,0,0.05);
+    position: relative;
+}
 #header #nav li a {
     width: auto;
     text-transform: uppercase;

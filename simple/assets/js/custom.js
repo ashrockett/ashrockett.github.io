@@ -67,6 +67,8 @@ PhotoSet.prototype = {
     }
 };
 
+initPhotoset = null;
+
 
 // remap jQuery to $
 (function ($) {
@@ -378,70 +380,69 @@ PhotoSet.prototype = {
             }
         });
 
-        // var people = new PhotoSet('72157635402073153');
-        // var people = new PhotoSet('72157637000430843');
-        var people = new PhotoSet('72157635436378738');
-        people.query(function() {
-            var photoSet = this;
-            for (var i = 0; i < photoSet.photos.length; i++) {
-                var photo = photoSet.photos[i],
-                    $photo = $('<div class="photo"></div>');
-                    $img = $('<img>');
-                $photo.append($img);
-                $img.load(function() {
-                    var $this = $(this),
-                        $parentPhoto = $this.parent('.photo');
-                    $parentPhoto.addClass('loaded');
-                    $this.hide().fadeIn(500);
-                    // imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
-                    // $this.addClass(imgClass);
-                    $this.data('aspect-ratio', this.width / $this.height());
-                    // $window.resize();
-                    // resizePhoto.call($photo[0]);
-                    resizePhoto.call($parentPhoto[0]);
-                });
+        initPhotoset = function(id) {
+             new PhotoSet(id).query(function() {
+                var photoSet = this;
+                for (var i = 0; i < photoSet.photos.length; i++) {
+                    var photo = photoSet.photos[i],
+                        $photo = $('<div class="photo"></div>');
+                        $img = $('<img>');
+                    $photo.append($img);
+                    $img.load(function() {
+                        var $this = $(this),
+                            $parentPhoto = $this.parent('.photo');
+                        $parentPhoto.addClass('loaded');
+                        $this.hide().fadeIn(500);
+                        // imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
+                        // $this.addClass(imgClass);
+                        $this.data('aspect-ratio', this.width / $this.height());
+                        // $window.resize();
+                        // resizePhoto.call($photo[0]);
+                        resizePhoto.call($parentPhoto[0]);
+                    });
 
-                $photo.css('width', $window.width());
+                    $photo.css('width', $window.width());
 
-                new Spinner({
-                    lines: 17, // The number of lines to draw
-                    length: 0, // The length of each line
-                    width: 8, // The line thickness
-                    radius: 41, // The radius of the inner circle
-                    corners: 1, // Corner roundness (0..1)
-                    rotate: 0, // The rotation offset
-                    direction: 1, // 1: clockwise, -1: counterclockwise
-                    color: '#000', // #rgb or #rrggbb or array of colors
-                    speed: 0.9, // Rounds per second
-                    trail: 78, // Afterglow percentage
-                    shadow: false, // Whether to render a shadow
-                    hwaccel: true, // Whether to use hardware acceleration
-                    className: 'spinner', // The CSS class to assign to the spinner
-                    zIndex: 2e9, // The z-index (defaults to 2000000000)
-                    top: '50%', // Top position relative to parent in px
-                    left: '50%' // Left position relative to parent in px
-                }).spin($photo[0]);
-                $photo.find('.spinner').css({
-                    left: '50%',
-                    top: '50%',
-                });
+                    new Spinner({
+                        lines: 17, // The number of lines to draw
+                        length: 0, // The length of each line
+                        width: 8, // The line thickness
+                        radius: 41, // The radius of the inner circle
+                        corners: 1, // Corner roundness (0..1)
+                        rotate: 0, // The rotation offset
+                        direction: 1, // 1: clockwise, -1: counterclockwise
+                        color: '#000', // #rgb or #rrggbb or array of colors
+                        speed: 0.9, // Rounds per second
+                        trail: 78, // Afterglow percentage
+                        shadow: false, // Whether to render a shadow
+                        hwaccel: true, // Whether to use hardware acceleration
+                        className: 'spinner', // The CSS class to assign to the spinner
+                        zIndex: 2e9, // The z-index (defaults to 2000000000)
+                        top: '50%', // Top position relative to parent in px
+                        left: '50%' // Left position relative to parent in px
+                    }).spin($photo[0]);
+                    $photo.find('.spinner').css({
+                        left: '50%',
+                        top: '50%',
+                    });
 
-                $img.data('src', photo.urls.large1024)
-                $('#photos #canvas').append($photo);
+                    $img.data('src', photo.urls.large1024)
+                    $('#photos #canvas').append($photo);
 
-                if (i == 0) {
-                    $photo.addClass('active');
-                    $img.attr('src', photo.urls.large1024);
+                    if (i == 0) {
+                        $photo.addClass('active');
+                        $img.attr('src', photo.urls.large1024);
+                    }
                 }
-            }
-            $photos
-                .data('count', photoSet.photos.length)
-                .data('current', 0)
-                .find('.photo').each(function() {
-                    $(this).css('width', $window.width());
-                });
-            $photos.trigger('shift');
-        });
+                $photos
+                    .data('count', photoSet.photos.length)
+                    .data('current', 0)
+                    .find('.photo').each(function() {
+                        $(this).css('width', $window.width());
+                    });
+                $photos.trigger('shift');
+            });
+        }
     });
 
 })(window.jQuery);
