@@ -49,6 +49,7 @@
      - Transparency is not recommended (iOS will put a black BG behind the icon) -->
   
   <!-- concatenate and minify for production -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/assets/css/reset.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   
@@ -90,6 +91,8 @@
         <li {% if page.title == 'new-zealand' %}class="active"{% endif %}><a href="/new-zealand/">New Zealand</a></li>
         <li {% if page.title == 'film' %}class="active"{% endif %}><a href="/film/">Film</a></li>
         <li {% if page.title == 'commercial' %}class="active"{% endif %}><a href="/commercial/">Commercial</a></li>
+
+        <li id="contact"><a href="">Contact</a></li>
       </ul>
     </div>
     <!-- <h1 id="title">Ash Rockett</h1> -->
@@ -125,10 +128,17 @@
 <!-- this is where we put our custom functions -->
 <!-- don't forget to concatenate and minify if needed -->
 <script src="/assets/js/custom.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
     $(function() {
         initPhotoset('{{ page.flickr_set_id }}');
+        $('#contact').popover({
+            trigger: 'hover',
+            placement: 'bottom',
+            html: true,
+            content: '<div style="text-align: center"><p>+64 02736 21845</p><p>ashrockett19@gmail.com</p></div>',
+        }).click(function() { return false; });
     })
 </script>
 
