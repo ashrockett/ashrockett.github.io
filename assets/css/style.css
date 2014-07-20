@@ -158,13 +158,17 @@ body.beautiful #photos a.arrow {
 }
 #photos #prev.arrow {
     position: absolute;
-    left: 0;
-    padding-right: 40%;
+    left: -38px;
+    padding-right: 35%;
+    padding-left: 5%;
+    text-align: left;
 }
 #photos #next.arrow {
     position: absolute;
     right: 0;
-    padding-left: 40%;
+    padding-left: 35%;
+    padding-right: 5%;
+    text-align: right;
 }
 
 #photos.no-prev #prev.arrow,
