@@ -14,7 +14,7 @@ Photo = function(id, farm, secret, server, title) {
     this.server = server;
     this.title = title;
 
-    var baseUrl = 'http://farm' + farm + '.static.flickr.com/' + server + '/' + id + '_' + secret;
+    var baseUrl = 'https://farm' + farm + '.static.flickr.com/' + server + '/' + id + '_' + secret;
     this.urls = {
         square75: baseUrl + '_s.jpg',
         square150: baseUrl + '_q.jpg',
@@ -32,7 +32,7 @@ Photo = function(id, farm, secret, server, title) {
 
 PhotoSet = function(photosetId) {
     this.photosetId = photosetId;
-    this.url = 'http://api.flickr.com/services/rest/?jsoncallback=?&' + $.param({
+    this.url = 'https://api.flickr.com/services/rest/?jsoncallback=?&' + $.param({
         format: 'json',
         method: 'flickr.photosets.getPhotos',
         api_key: 'fbb7446eb79b0edeb93fbed3ba0adab6',
